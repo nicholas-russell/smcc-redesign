@@ -12,4 +12,14 @@ class Page {
 
 }
 
+class Notices {
+
+	function getNotices() {
+		$externalHtml = file_get_html('http://www.smccsydney.catholic.edu.au/');
+		foreach ($externalHtml->find('div#message') as $e) {
+			echo $e->innertext;
+		}
+	}
+}
+
 ?>

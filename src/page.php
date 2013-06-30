@@ -8,6 +8,9 @@
 		require('api.php');
 		$page = new Page();
 		$page->getPage($_GET['pageId']);
+
+		$messages = new Notices();
+		$messages->getNotices();
 	?>
 </body>
 </html>
