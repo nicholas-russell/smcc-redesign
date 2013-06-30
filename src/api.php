@@ -13,6 +13,12 @@ class Scraper {
 			echo $e->innertext;
 		}
 	}
+	function getSideBarImage($pageId) {
+		$externalHtml = file_get_html('http://www.smccsydney.catholic.edu.au/page/display/id/' . $pageId);
+		foreach ($externalHtml->find('div#sidecol img') as $e) {
+			echo $e->src;
+		}
+	}
 
 }
 
