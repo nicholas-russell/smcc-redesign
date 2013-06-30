@@ -19,6 +19,12 @@ class Scraper {
 			echo $e->src;
 		}
 	}
+	function getRelatedLinks($pageId) {
+		$externalHtml = file_get_html('http://www.smccsydney.catholic.edu.au/page/display/id/' . $pageId);
+		foreach ($externalHtml->find('div#relatedlinks') as $e) {
+			echo $e->innertext;
+		}
+	}
 
 }
 

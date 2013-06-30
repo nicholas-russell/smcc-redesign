@@ -10,6 +10,7 @@
 		$scraper->getPage($_GET['pageId']);
 		$scraper->getNotices();
 		$scraper->getSideBarImage($_GET['pageId']);
+		$scraper->getRelatedLinks($_GET['pageId']);
 	?>
 </body>
 </html>
