@@ -6,11 +6,9 @@
 <body>
 	<?php
 		require('api.php');
-		$page = new Page();
-		$page->getPage($_GET['pageId']);
-
-		$messages = new Notices();
-		$messages->getNotices();
+		$scraper = new Scraper();
+		$scraper->getPage($_GET['pageId']);
+		$scraper->getNotices();
 	?>
 </body>
 </html>
