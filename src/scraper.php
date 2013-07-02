@@ -1,24 +1,24 @@
 <?php
 
-include('simple_html_dom.php');
+include('simple_html_dom.php'); // The scraper
 
 class pageScraper {
 
-	public $pageUrl;
+	public $pageUrl; // This Url will be used throughout the class as the page being scraped. 
 
 	function __construct($pageId) {
-		$this->pageUrl = 'http://www.smccsydney.catholic.edu.au/page/display/id/' . $pageId;
+		$this->pageUrl = 'http://www.smccsydney.catholic.edu.au/page/display/id/' . $pageId; // Sets the pageUrl as the pageId from construct and the url from smcc
 	}
 
-	function getPage() {
-		$externalHtml = file_get_html($this->pageUrl);
-		foreach($externalHtml->find('div#maincol') as $e)
-    		echo $e->innertext;
+	function getPage() { // Gets the main col of the page
+		$externalHtml = file_get_html($this->pageUrl); // Gets the Html
+		foreach($externalHtml->find('div#maincol') as $e) // div#maincol is the inner column
+    		echo $e->innertext; // Gets the text with the h and p tags intact
 	}
 
-	function getNotices() {
-		$externalHtml = file_get_html('http://www.smccsydney.catholic.edu.au/');
-		foreach ($externalHtml->find('div#message') as $e) {
+	function getNotices() { // Gets the front page notices
+		$externalHtml = file_get_html('http://www.smccsydney.catholic.edu.au/'); // Front page
+		foreach ($externalHtml->find('div#message') as $e) { // Gets the message 
 			echo $e->innertext;
 		}
 	}
@@ -30,7 +30,7 @@ class pageScraper {
 		}
 	}
 
-	function getSideImage() {
+	function getSideImage() { // Gets the src of the img relative to server
 		$externalHtml = file_get_html($this->pageUrl);
 		foreach ($externalHtml->find('div#sidecol img') as $e) {
 			echo $e->src;
@@ -42,7 +42,7 @@ class pageScraper {
 
 }
 
-$page = new pageScraper($_GET['pageId']);
+$page = new pageScraper($_GET['pageId']); // Gets the page id from ?pageId= in the url
 $page->getPage();
 $page->getSideImage();
 $page->getNotices();
