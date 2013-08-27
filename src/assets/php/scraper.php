@@ -45,7 +45,7 @@ class pageScraper {
 $page = new pageScraper($_GET['pageId']); // Gets the page id from ?pageId= in the url
 $page->getPage();
 $page->getSideImage();
-$page->getNotices();
 $page->getRelatedLinks();
 
+$page->getNotices();
 ?>
