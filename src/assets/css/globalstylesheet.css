@@ -61,10 +61,10 @@ html {
 /* Media query that alters the footer height when about us and news are hidden */
 @media (max-width: 767px) {
 	#footer {
-		height: 150px;
+		height: 250px !important;
 	}
 	body {
-		margin: 0 0 150px;
+		margin: 0 0 250px !important;
 	}
 }
 
