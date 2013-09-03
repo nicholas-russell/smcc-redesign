@@ -48,10 +48,10 @@ class pageScraper {
 
 }
 
-$page = new pageScraper($_GET['pageId']); // Gets the page id from ?pageId= in the url
-$page->getPage();
-$page->getSideImage();
-$page->getRelatedLinks();
-$page->getPageTitle();
-$page->getNotices();
+//$page = new pageScraper($_GET['pageId']); // Gets the page id from ?pageId= in the url
+//$page->getPage();
+//$page->getSideImage();
+//$page->getRelatedLinks();
+//$page->getPageTitle();
+//$page->getNotices();
 ?>

@@ -114,7 +114,7 @@
 		<div class="box"></div>
 	</div>
 	<?php
-		require('assets/html/footer.html');
+		require('assets/html/footer.php');
 	?>
 	</body>
 </html>
