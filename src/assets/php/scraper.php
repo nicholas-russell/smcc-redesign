@@ -10,6 +10,12 @@ class pageScraper {
 		$this->pageUrl = 'http://www.smccsydney.catholic.edu.au/page/display/id/' . $pageId; // Sets the pageUrl as the pageId from construct and the url from smcc
 	}
 
+	function getPageTitle() { // Gets the title, used for the title tag
+		$externalHtml = file_get_html($this->pageUrl);
+		foreach($externalHtml->find('div.dynamiccontent h1 span') as $e) // the main columns h1 tag has a span inside
+    		echo $e->plaintext; // Gets the plaintext
+	}
+
 	function getPage() { // Gets the main col of the page
 		$externalHtml = file_get_html($this->pageUrl); // Gets the Html
 		foreach($externalHtml->find('div#maincol') as $e) // div#maincol is the inner column
@@ -46,6 +52,6 @@ $page = new pageScraper($_GET['pageId']); // Gets the page id from ?pageId= in t
 $page->getPage();
 $page->getSideImage();
 $page->getRelatedLinks();
-
+$page->getPageTitle();
 $page->getNotices();
 ?>
