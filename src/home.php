@@ -116,5 +116,20 @@
 	<?php
 		require('assets/html/footer.php');
 	?>
+	<script>
+		$(window).load(function() {
+	    $('.flexslider').flexslider({
+		    controlNav: false,
+		    directionNav: true,
+		    randomize: true
+			    
+		    });
+		 });
+		  $(document).ready(function() {
+		    $('img').each(function(){
+		  $(this).attr('src', $(this).attr('data-src'));
+		});
+		});
+	</script>
 	</body>
 </html>
