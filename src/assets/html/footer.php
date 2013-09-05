@@ -1,3 +1,4 @@
+<br/>
 <div id="footer">
 		<div class="container">
 			<div class="row">
@@ -20,7 +21,7 @@
 				<div class="col-md-4">
 					<h4>School News</h4>
 					<?php
-						include 'assets/php/scraper.php';
+						include_once('assets/php/scraper.php');
 						$page = new pageScraper('4'); // Gets the page id from ?pageId= in the url
 						$page->getNotices();
 					?>

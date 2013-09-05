@@ -1,6 +1,6 @@
 <?php
 
-include('simple_html_dom.php'); // The scraper
+include('assets/php/simple_html_dom.php'); // The scraper
 
 class pageScraper {
 
