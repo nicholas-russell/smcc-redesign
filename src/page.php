@@ -24,7 +24,7 @@
 				</div>
 				<div class="col-md-4">
 					
-					<img class="hidden-xs hidden-sm" id="sideImage" src="http://www.smccsydney.catholic.edu.au<?php $page->getSideImage();?>"/>
+					<img id="sideImage" src="http://www.smccsydney.catholic.edu.au<?php $page->getSideImage();?>"/>
 					
 					<?php $page->getRelatedLinks();	?>
 				</div>
