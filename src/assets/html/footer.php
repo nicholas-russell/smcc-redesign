@@ -37,11 +37,3 @@
 	<script src="assets/js/bootstrap.min.js"></script>
 	
 	<script src="assets/js/jquery.flexslider.js"></script>
-	<script>
-		 
-		 var $url = 'page.php?pageId=';
-		    $('li a').each(function(){
-		  $(this).attr('href', $url + $(this).attr('data-pageId'));
-		});
-		
-	</script>
